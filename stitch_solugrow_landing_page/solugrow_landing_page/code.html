@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoluGrow - Modern Gym Management CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 102, 0, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 102, 0, 0.1);
+        }
+        .orange-glow {
+            box-shadow: 0 0 40px -10px rgba(255, 102, 0, 0.3);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 80% 20%, rgba(255, 102, 0, 0.15) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<div class="relative min-h-screen flex flex-col">
+<!-- Background Accents -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10">
+<div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[100px]"></div>
+</div>
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full glass border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center gap-2">
+<div class="p-2 bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">fitness_center</span>
+</div>
+<h2 class="text-2xl font-black tracking-tight text-slate-900 dark:text-white">SoluGrow</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-sm font-bold hover:text-primary">Login</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all orange-glow">
+                            Start Free Trial
+                        </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            NEW: AI-POWERED RETENTION TOOLS
+                        </div>
+<h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-tight mb-6 dark:text-white">
+                            Powerful Gym Management CRM Built For <span class="text-primary">Modern Fitness</span> Businesses
+                        </h1>
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto lg:mx-0">
+                            Manage members, attendance, payments, trainers and analytics from one powerful platform designed for gyms.
+                        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+<button class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-lg orange-glow hover:scale-105 transition-transform">
+                                Start Free Trial
+                            </button>
+<button class="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white font-bold rounded-lg border border-slate-700 hover:bg-slate-700 transition-colors inline-flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span>
+                                Book Demo
+                            </button>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="relative z-10 rounded-2xl border border-primary/20 p-2 glass orange-glow">
+<div class="rounded-xl overflow-hidden bg-slate-900 aspect-[16/10] relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Blurred gym environment with orange cinematic lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4ehEUFsUDleol6Jz6V4EqB4khoWzxD7ROIwmp-QR-VgKjAjIl1bIOsn8RVj6eWXEmeyip52H9M0o7XEZIadv2NeIwqaokrv6UbiI2VZOROrqdiBMVykyKWCFQUQwqTxqJVuCVVpZFPb4zijG1OjSdsXjNVqd94maw5NQpIqceOe6QvmL1YkzVoCdCVKUrvdBvxlDm7I5UWISI5zz9bwYCKnPQd3wBGqogU91B2OM-0k4jU5Si48ZBvn3CIemWcJBfPifQKY3ZrbQ')"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-[85%] h-[80%] glass rounded-lg border border-white/10 shadow-2xl overflow-hidden flex flex-col">
+<div class="h-8 bg-black/40 border-b border-white/10 flex items-center px-3 gap-1">
+<div class="w-2 h-2 rounded-full bg-red-500/50"></div>
+<div class="w-2 h-2 rounded-full bg-yellow-500/50"></div>
+<div class="w-2 h-2 rounded-full bg-green-500/50"></div>
+</div>
+<div class="flex-1 p-4 bg-background-dark/80 flex flex-col gap-4">
+<div class="flex gap-4">
+<div class="flex-1 h-20 bg-primary/10 rounded border border-primary/20 flex items-end p-2 gap-1">
+<div class="w-2 h-1/2 bg-primary"></div>
+<div class="w-2 h-3/4 bg-primary"></div>
+<div class="w-2 h-1/4 bg-primary"></div>
+<div class="w-2 h-full bg-primary"></div>
+</div>
+<div class="flex-1 h-20 bg-primary/10 rounded border border-primary/20"></div>
+</div>
+<div class="flex-1 bg-slate-800/50 rounded p-3">
+<div class="w-1/2 h-4 bg-slate-700 rounded mb-4"></div>
+<div class="space-y-2">
+<div class="w-full h-2 bg-slate-700/50 rounded"></div>
+<div class="w-full h-2 bg-slate-700/50 rounded"></div>
+<div class="w-3/4 h-2 bg-slate-700/50 rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trusted Logos -->
+<section class="py-12 border-y border-primary/10 glass">
+<div class="max-w-7xl mx-auto px-4">
+<p class="text-center text-sm font-bold uppercase tracking-widest text-primary mb-8">Trusted by Industry Leaders</p>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">payments</span>
+<span class="font-bold text-xl">UPI</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+<span class="font-bold text-xl">Razorpay</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">credit_card</span>
+<span class="font-bold text-xl">Stripe</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<span class="font-bold text-xl">WhatsApp</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">cloud</span>
+<span class="font-bold text-xl">Google</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="py-24 relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-black mb-4 dark:text-white">Everything You Need To Grow</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Modern tools designed with glassmorphism and glowing accents to help your gym business scale effortlessly.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Feature Card 1 -->
+<div class="group p-8 rounded-2xl glass border border-primary/10 hover:border-primary/40 transition-all hover:-translate-y-2 orange-glow">
+<div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">group</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Member Management</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Easily organize and track your member database. Keep track of medical records, preferences, and personal goals.
+                        </p>
+</div>
+<!-- Feature Card 2 -->
+<div class="group p-8 rounded-2xl glass border border-primary/10 hover:border-primary/40 transition-all hover:-translate-y-2 orange-glow">
+<div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Attendance Tracking</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Monitor check-ins and session attendance in real-time. Use QR codes or biometric integration for seamless entry.
+                        </p>
+</div>
+<!-- Feature Card 3 -->
+<div class="group p-8 rounded-2xl glass border border-primary/10 hover:border-primary/40 transition-all hover:-translate-y-2 orange-glow">
+<div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">sports_gymnastics</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Trainer Management</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Assign trainers and manage schedules seamlessly. Track performance metrics and commission payouts automatically.
+                        </p>
+</div>
+<!-- Feature Card 4 -->
+<div class="group p-8 rounded-2xl glass border border-primary/10 hover:border-primary/40 transition-all hover:-translate-y-2 orange-glow">
+<div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">receipt_long</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Subscription Billing</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Automated invoicing and secure payment processing. Handle recurring billing, renewals, and missed payments with ease.
+                        </p>
+</div>
+<!-- Feature Card 5 -->
+<div class="group p-8 rounded-2xl glass border border-primary/10 hover:border-primary/40 transition-all hover:-translate-y-2 orange-glow">
+<div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">query_stats</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Analytics Dashboard</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            In-depth insights into your gym's performance. Monitor churn rate, peak hours, and revenue growth in real-time.
+                        </p>
+</div>
+<!-- Feature Card 6 -->
+<div class="group p-8 rounded-2xl glass border border-primary/10 hover:border-primary/40 transition-all hover:-translate-y-2 orange-glow">
+<div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">smartphone</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Mobile Access</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Manage your business on the go with our mobile app. Both members and staff get dedicated interfaces for mobility.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-auto py-12 border-t border-primary/10 glass">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="p-1.5 bg-primary rounded text-white scale-75">
+<span class="material-symbols-outlined text-xl">fitness_center</span>
+</div>
+<h2 class="text-xl font-black text-slate-900 dark:text-white">SoluGrow</h2>
+</div>
+<div class="flex gap-8 text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Help Center</a>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">© 2024 SoluGrow CRM. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

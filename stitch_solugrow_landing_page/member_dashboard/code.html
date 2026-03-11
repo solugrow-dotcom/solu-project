@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoluGrow Member Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#1a0f08",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 102, 0, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(20, 10, 5, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 102, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex min-h-screen relative overflow-hidden">
+<!-- Abstract Background Orbs -->
+<div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+<!-- Side Navigation -->
+<aside class="w-64 border-r border-primary/10 glass-dark hidden lg:flex flex-col sticky top-0 h-screen p-6">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white">bolt</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-slate-100">SoluGrow</h1>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold">Performance Hub</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">fitness_center</span>
+<span>Workouts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span>Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Trainer</span>
+</a>
+</nav>
+<div class="mt-auto p-4 glass rounded-2xl border border-primary/20">
+<p class="text-xs text-slate-400 mb-2">Current Plan</p>
+<p class="text-sm font-bold text-slate-100 mb-3">Elite Yearly Access</p>
+<button class="w-full py-2 bg-primary/20 hover:bg-primary/30 text-primary text-xs font-bold rounded-lg transition-colors">
+                    Manage Billing
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 lg:p-10 max-w-7xl mx-auto w-full">
+<!-- Header -->
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+<div>
+<h2 class="text-3xl font-black tracking-tight text-slate-100">Welcome back, Alex</h2>
+<p class="text-slate-400">You're on a 12-day workout streak. Keep it up!</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-12 h-12 rounded-full glass-dark flex items-center justify-center text-slate-300 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-3 right-3 w-2 h-2 bg-primary rounded-full border-2 border-background-dark"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-white/10">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-slate-100">Alex Rivers</p>
+<p class="text-xs text-primary">Gold Member</p>
+</div>
+<img class="w-12 h-12 rounded-full border-2 border-primary/30 object-cover" data-alt="Profile picture of a fit male member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOXO6KZzRCtEPqe7vKxxiiQpjCKt1ZCVEncB76KvUrqNht31vchUjh0DVxgYRRqAGBv-LtVshy3Eq0TsfnWZ_M7NScnLLUJFNeRYw79aMcceEhV3Rg-JKAKp_xHTpscmZ6bTBYKOc6KBw40qlgl71Nt9QgC7nPZIbBPonDw41gi4IoO2ZBmvolhtSNFEsGNwbHg0O6NyonpvjF_ACCE9zD8O8qohM-l9giMRtBFvB3jBZoxhJTmmJq80RBDALJ8uPbV4zvCsu9LZY"/>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Column 1 & 2 -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Membership Status Card -->
+<section class="relative overflow-hidden rounded-3xl glass-dark border border-white/5 p-8 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 space-y-4">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase">
+<span class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
+                                Membership Active
+                            </div>
+<h3 class="text-4xl font-black text-slate-100">Gold Tier Status</h3>
+<p class="text-slate-400 max-w-md">Access to all premium facilities, personal training sessions, and the sauna lounge. Your membership renews on <span class="text-slate-100 font-semibold">Oct 12, 2024</span>.</p>
+<div class="flex flex-wrap gap-4 pt-2">
+<button class="px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                                    Upgrade to Platinum
+                                </button>
+<button class="px-6 py-3 glass text-slate-100 font-bold rounded-xl hover:bg-white/10 transition-colors">
+                                    View Benefits
+                                </button>
+</div>
+</div>
+<div class="w-full md:w-48 aspect-square relative">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl"></div>
+<svg class="relative w-full h-full transform -rotate-90">
+<circle class="text-white/5" cx="50%" cy="50%" fill="transparent" r="45%" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="50%" cy="50%" fill="transparent" r="45%" stroke="currentColor" stroke-dasharray="283" stroke-dashoffset="40" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-black text-slate-100">85%</span>
+<span class="text-[10px] text-slate-400 uppercase font-bold">Goal Reach</span>
+</div>
+</div>
+</section>
+<!-- Workout Calendar -->
+<section class="glass-dark rounded-3xl border border-white/5 p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold text-slate-100">Training Schedule</h3>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-white/5 rounded-lg text-slate-400"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="text-sm font-bold text-slate-200">October 2023</span>
+<button class="p-2 hover:bg-white/5 rounded-lg text-slate-400"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-[10px] font-bold text-slate-500 uppercase">Mon</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Tue</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Wed</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Thu</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Fri</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Sat</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Sun</span>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Simple Calendar representation -->
+<div class="aspect-square flex items-center justify-center text-sm text-slate-600 rounded-xl">25</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-600 rounded-xl">26</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-600 rounded-xl">27</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-600 rounded-xl">28</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-600 rounded-xl">29</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-600 rounded-xl">30</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-100 rounded-xl glass border border-primary/30">1</div>
+<div class="aspect-square flex flex-col items-center justify-center text-sm text-slate-100 rounded-xl bg-primary/20 border border-primary/40 relative">
+                                2
+                                <div class="w-1 h-1 bg-primary rounded-full absolute bottom-2"></div>
+</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-100 rounded-xl glass">3</div>
+<div class="aspect-square flex flex-col items-center justify-center text-sm text-slate-100 rounded-xl bg-primary/20 border border-primary/40 relative">
+                                4
+                                <div class="w-1 h-1 bg-primary rounded-full absolute bottom-2"></div>
+</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-100 rounded-xl glass">5</div>
+<div class="aspect-square flex flex-col items-center justify-center text-sm text-white rounded-xl bg-primary shadow-lg shadow-primary/30 font-bold scale-110">
+                                6
+                            </div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-100 rounded-xl glass">7</div>
+<div class="aspect-square flex items-center justify-center text-sm text-slate-100 rounded-xl glass">8</div>
+</div>
+</section>
+<!-- Payment History Table -->
+<section class="glass-dark rounded-3xl border border-white/5 overflow-hidden">
+<div class="p-6 border-b border-white/5">
+<h3 class="text-xl font-bold text-slate-100">Recent Transactions</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-white/5 text-[10px] uppercase tracking-widest text-slate-400 font-bold">
+<tr>
+<th class="px-6 py-4">Transaction ID</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Amount</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">Receipt</th>
+</tr>
+</thead>
+<tbody class="text-sm text-slate-300 divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-mono">#SG-99420</td>
+<td class="px-6 py-4">Sep 12, 2023</td>
+<td class="px-6 py-4 font-bold text-slate-100">$89.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-md bg-green-500/10 text-green-500 text-[10px] font-bold">SUCCESS</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span>
+                                                PDF
+                                            </button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-mono">#SG-98115</td>
+<td class="px-6 py-4">Aug 12, 2023</td>
+<td class="px-6 py-4 font-bold text-slate-100">$89.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-md bg-green-500/10 text-green-500 text-[10px] font-bold">SUCCESS</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span>
+                                                PDF
+                                            </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Column 3 (Sidebar widgets) -->
+<div class="space-y-8">
+<!-- Trainer Profile Section -->
+<section class="glass-dark rounded-3xl border border-white/5 p-6">
+<h3 class="text-xl font-bold text-slate-100 mb-6">Your Trainer</h3>
+<div class="text-center">
+<div class="relative w-24 h-24 mx-auto mb-4">
+<img class="w-full h-full rounded-2xl object-cover border-2 border-primary/20" data-alt="Portrait of a professional athletic fitness trainer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARA3BZTLK_BfkuvE68tgrCOBPeJW47QgaTaYN9gn-wI_QH_6CnbbnmxI6MzIVhqziiZTin9TdytnLLe1vN2-b9iMSQogQyf7vVv2gNNhKKdVR5kQGRMzkhMznC3s9-x8H4LAebj1eKGRty2v3f8WVORGq6CveXcqmNNQv6gMjli3RVKY6F-MuALt2UsouL9ZXLFBAow8M7A3pM8D3tNakcIRzin4uBqg2ZXVRsAu4UzRPjVgN-F4gjIlswRk98v0bh2CFzXaho2Xc"/>
+<div class="absolute -bottom-2 -right-2 bg-green-500 w-5 h-5 rounded-full border-4 border-background-dark"></div>
+</div>
+<h4 class="text-lg font-bold text-slate-100">Coach Marcus Vane</h4>
+<p class="text-sm text-slate-400 mb-6">Strength &amp; Conditioning Specialist</p>
+<div class="grid grid-cols-2 gap-3 mb-6">
+<div class="p-3 rounded-2xl bg-white/5">
+<p class="text-lg font-bold text-primary">120+</p>
+<p class="text-[10px] text-slate-500 uppercase font-bold">Clients</p>
+</div>
+<div class="p-3 rounded-2xl bg-white/5">
+<p class="text-lg font-bold text-primary">8yr</p>
+<p class="text-[10px] text-slate-500 uppercase font-bold">Exp.</p>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-2xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">chat_bubble</span>
+                                Send Message
+                            </button>
+</div>
+</section>
+<!-- Attendance History Log -->
+<section class="glass-dark rounded-3xl border border-white/5 p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold text-slate-100">Activity Log</h3>
+<button class="text-primary text-xs font-bold hover:underline">See All</button>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary mb-1"></div>
+<div class="w-[1px] h-full bg-white/10"></div>
+</div>
+<div class="pb-6">
+<p class="text-xs text-slate-500 font-bold mb-1 uppercase tracking-wider">Today, 06:15 AM</p>
+<p class="text-sm font-bold text-slate-100">Gym Check-in</p>
+<p class="text-xs text-slate-400">Duration: 1h 45m • Legs &amp; Glutes</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary/40 mb-1"></div>
+<div class="w-[1px] h-full bg-white/10"></div>
+</div>
+<div class="pb-6">
+<p class="text-xs text-slate-500 font-bold mb-1 uppercase tracking-wider">Yesterday, 05:45 PM</p>
+<p class="text-sm font-bold text-slate-100">Gym Check-in</p>
+<p class="text-xs text-slate-400">Duration: 1h 10m • Cardio HIIT</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary/40 mb-1"></div>
+</div>
+<div>
+<p class="text-xs text-slate-500 font-bold mb-1 uppercase tracking-wider">Oct 04, 07:00 AM</p>
+<p class="text-sm font-bold text-slate-100">Gym Check-in</p>
+<p class="text-xs text-slate-400">Duration: 2h 15m • Upper Body Push</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Stats Widget -->
+<div class="rounded-3xl bg-gradient-to-br from-primary to-[#ff8c40] p-6 text-white shadow-xl shadow-primary/20">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-3xl">local_fire_department</span>
+<span class="text-xs font-bold bg-white/20 px-2 py-1 rounded-lg uppercase">This Week</span>
+</div>
+<h4 class="text-sm font-medium opacity-80 mb-1">Calories Burned</h4>
+<p class="text-4xl font-black mb-4">12,450</p>
+<div class="w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-white w-[78%] rounded-full"></div>
+</div>
+<p class="text-[10px] mt-2 font-bold opacity-80 uppercase tracking-widest text-right">78% of Target</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

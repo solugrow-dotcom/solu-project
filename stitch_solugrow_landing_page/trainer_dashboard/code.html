@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoluGrow | Trainer Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#1a110a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 102, 0, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 flex flex-col border-r border-white/10 glass-dark">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined font-bold">exercise</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-primary">SoluGrow</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Trainer Pro</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-medium">Members</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-medium">Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition-all relative" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-medium">Notifications</span>
+<span class="absolute right-4 top-4 w-2 h-2 bg-primary rounded-full"></span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-white/10">
+<div class="glass rounded-xl p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center" data-alt="Headshot of professional fitness trainer" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjdhvDnCrfPTInZesIQgVzjZFdZOIDW9fgTCO7NGI4NIUu4DCplQz-ajEej3cfg19nNAppwAQoM3_S67_kfEiWJYXuf9m0JdPts6qrdt1S1aWobSCuh9o7vzZIhzBYUP0_s_zrC1BLKgpNpxd4GBZzuU06DndHceaxCaeaamtaOK0cjQbJlJyoN52gpUL8hHbbze1BYr-AuhY4sVTG591noO56UuVg1at1Iq_K-cAcix1LZIQXK_T6q011Qbka5XMLWFVzim9N99Q')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Marcus Chen</p>
+<p class="text-xs text-slate-500">Elite Coach</p>
+</div>
+<button class="ml-auto text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-sm">settings</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background-dark to-background-dark">
+<header class="p-8 flex items-center justify-between">
+<div>
+<h2 class="text-3xl font-black text-slate-100">Trainer Dashboard</h2>
+<p class="text-slate-400 mt-1">Ready for today's sessions, Marcus?</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">search</span>
+<input class="bg-white/5 border-white/10 rounded-full pl-10 pr-6 py-2 text-sm focus:ring-primary focus:border-primary w-64" placeholder="Search members..." type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-bold text-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                        Create Plan
+                    </button>
+</div>
+</header>
+<div class="px-8 pb-8 space-y-8">
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="glass-dark p-6 rounded-2xl">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-primary/20 rounded-lg text-primary material-symbols-outlined">person</span>
+<span class="text-xs font-bold text-green-500 flex items-center">+12% <span class="material-symbols-outlined text-xs">trending_up</span></span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Total Members</p>
+<h3 class="text-3xl font-black mt-1">42</h3>
+</div>
+<div class="glass-dark p-6 rounded-2xl">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-blue-500/20 rounded-lg text-blue-500 material-symbols-outlined">event_available</span>
+<span class="text-xs font-bold text-slate-500">Target: 20</span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Daily Sessions</p>
+<h3 class="text-3xl font-black mt-1">18</h3>
+</div>
+<div class="glass-dark p-6 rounded-2xl">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-orange-500/20 rounded-lg text-orange-500 material-symbols-outlined">speed</span>
+<span class="text-xs font-bold text-green-400 flex items-center">+5.2%</span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Avg. Progress</p>
+<h3 class="text-3xl font-black mt-1">76%</h3>
+</div>
+<div class="glass-dark p-6 rounded-2xl">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-purple-500/20 rounded-lg text-purple-500 material-symbols-outlined">timer</span>
+<span class="text-xs font-bold text-red-400 flex items-center">-2m <span class="material-symbols-outlined text-xs">trending_down</span></span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Active Time</p>
+<h3 class="text-3xl font-black mt-1">5.4h</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Progress & Members -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Weekly Schedule -->
+<div class="glass-dark rounded-2xl overflow-hidden">
+<div class="p-6 border-b border-white/5 flex items-center justify-between">
+<h3 class="font-bold text-lg">Weekly Workout Schedule</h3>
+<div class="flex gap-2">
+<button class="p-1 hover:bg-white/5 rounded"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<span class="text-sm font-medium text-slate-400 uppercase tracking-tighter">Oct 23 - Oct 29</span>
+<button class="p-1 hover:bg-white/5 rounded"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 border-b border-white/5">
+<div class="p-4 text-center border-r border-white/5 bg-primary/5"><p class="text-[10px] uppercase font-bold text-primary">Mon</p><p class="text-xl font-black">23</p></div>
+<div class="p-4 text-center border-r border-white/5"><p class="text-[10px] uppercase font-bold text-slate-500">Tue</p><p class="text-xl font-black">24</p></div>
+<div class="p-4 text-center border-r border-white/5"><p class="text-[10px] uppercase font-bold text-slate-500">Wed</p><p class="text-xl font-black">25</p></div>
+<div class="p-4 text-center border-r border-white/5"><p class="text-[10px] uppercase font-bold text-slate-500">Thu</p><p class="text-xl font-black">26</p></div>
+<div class="p-4 text-center border-r border-white/5"><p class="text-[10px] uppercase font-bold text-slate-500">Fri</p><p class="text-xl font-black">27</p></div>
+<div class="p-4 text-center border-r border-white/5"><p class="text-[10px] uppercase font-bold text-slate-500">Sat</p><p class="text-xl font-black">28</p></div>
+<div class="p-4 text-center"><p class="text-[10px] uppercase font-bold text-slate-500">Sun</p><p class="text-xl font-black text-slate-600">29</p></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-center gap-4 group">
+<div class="w-16 text-sm font-bold text-slate-500">08:00</div>
+<div class="flex-1 p-4 rounded-xl bg-primary/20 border-l-4 border-primary group-hover:bg-primary/30 transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<p class="font-bold text-primary">HIIT Cardio - Sarah J.</p>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-primary/20 text-primary uppercase">Active</span>
+</div>
+<p class="text-xs text-slate-400 mt-1">Gym Floor A • 45 min</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-16 text-sm font-bold text-slate-500">10:30</div>
+<div class="flex-1 p-4 rounded-xl bg-white/5 border-l-4 border-slate-700 group-hover:bg-white/10 transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<p class="font-bold text-slate-200">Strength Training - Mike D.</p>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 uppercase">Upcoming</span>
+</div>
+<p class="text-xs text-slate-400 mt-1">Power Rack 3 • 60 min</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group opacity-50">
+<div class="w-16 text-sm font-bold text-slate-500">12:00</div>
+<div class="flex-1 p-4 rounded-xl bg-green-500/10 border-l-4 border-green-500 transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<p class="font-bold text-green-400 line-through">Yoga Flow - Emma R.</p>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-green-900/30 text-green-500 uppercase">Completed</span>
+</div>
+<p class="text-xs text-slate-500 mt-1">Studio 2 • 50 min</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Progress Section -->
+<div class="glass-dark rounded-2xl p-6">
+<h3 class="font-bold text-lg mb-6">Assigned Member Progress</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of gym member David" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCobjy2CtE5w7gqyMx3kJLBmeP5vQmdjYkz_5CccbPfdW_744lDumHAyOhNyZSPv_zP_BxuIaU4_qpXXXC6WOMmEToK8Oj8gjrpYTdRj9Pk3MuE-uslapJNmpDCeKoh_rJ5Rhvw2Hb2xSgflRfUtV7nsK6so85YkwuurodtmWmbpt0Xf-AdFasU5opTfqGNgpSedXLVZEoIE0MZv8V-nbSnCH9KHI0afh8ru_8l6YTS_FhhwZt2zAObTugKgFbMHKg0n6zligZuDzU"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-2">
+<p class="font-bold">David Thompson</p>
+<p class="text-sm font-bold text-primary">82% <span class="text-xs text-slate-500 font-normal">of goal</span></p>
+</div>
+<div class="h-2 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full shadow-[0_0_10px_rgba(255,102,0,0.5)]" style="width: 82%"></div>
+</div>
+</div>
+<div class="shrink-0 flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-white">check</span></div>
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-white">check</span></div>
+<div class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-slate-400">more_horiz</span></div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of gym member Jessica" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnK-UV6v5X-u4JJr_9RSwmqa6MUMR9KqkNALqSSVhkUSmbvicmP4jSZnV5dXw7koUYoWpmzDTCdChoAS2JZBHon5_qD1JsUBcRi5x_yq3WDb5xxNlFA4bLrzcsfcDb5ElIoYD6w-LLaLLagqOWPVux157Xy8b4czEFCYkZBElv22CTqVcbNF25KDmnweRqqCEtM9KuH6Ee9c5jBAqteMsidHUINXqj50uXyU4-bMsyQnoBFts9wf6ETMyFywktOr7nqE3KSewtd1Y"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-2">
+<p class="font-bold">Jessica Moore</p>
+<p class="text-sm font-bold text-blue-400">45% <span class="text-xs text-slate-500 font-normal">of goal</span></p>
+</div>
+<div class="h-2 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-blue-400 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="shrink-0 flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-white">check</span></div>
+<div class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-slate-400">more_horiz</span></div>
+<div class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-slate-400">more_horiz</span></div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of gym member Liam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBVSueYGOGruX8kpMIXDqrFSxPcZD14hLfHlEB3D_byXQuXgT2FAqcFGhYsyYHndP0dYCQ99nZ4sWVp4sMz0SMjT4y7zIevaqLi42P7K9_8UPMXY91z18CiWkCSOdkz_6eL7bBTTTP7ekKPbT-MrYzsiYFkkz6eH-gXYtb3SP9hdoXvPlRm_IT2Ltwo7Ain_x_h6t4aqP5suOl6SCHLLwwVS_QmF6xPt1DZJWaAucxoO_coM8krwAkP6RkzGM3SqGr-UO7FVaWLss"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-2">
+<p class="font-bold">Liam Wilson</p>
+<p class="text-sm font-bold text-orange-400">94% <span class="text-xs text-slate-500 font-normal">of goal</span></p>
+</div>
+<div class="h-2 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-orange-400 rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<div class="shrink-0 flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-white">check</span></div>
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-white">check</span></div>
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center border-2 border-background-dark"><span class="material-symbols-outlined text-[12px] text-white">check</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Stats & Notifications -->
+<div class="space-y-8">
+<!-- Notifications -->
+<div class="glass-dark rounded-2xl p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-lg">Alerts</h3>
+<a class="text-xs font-bold text-primary uppercase" href="#">View All</a>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+<div class="shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">warning</span>
+</div>
+<div>
+<p class="text-xs font-bold">Missed Session</p>
+<p class="text-xs text-slate-400">Alex J. missed morning cardio session.</p>
+<p class="text-[10px] text-slate-600 mt-1 uppercase font-bold">10m ago</p>
+</div>
+</div>
+<div class="flex gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+<div class="shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
+<span class="material-symbols-outlined text-sm">new_releases</span>
+</div>
+<div>
+<p class="text-xs font-bold">New Goal Achieved</p>
+<p class="text-xs text-slate-400">Sara P. hit 50kg bench press target!</p>
+<p class="text-[10px] text-slate-600 mt-1 uppercase font-bold">2h ago</p>
+</div>
+</div>
+<div class="flex gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+<div class="shrink-0 w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined text-sm">message</span>
+</div>
+<div>
+<p class="text-xs font-bold">New Message</p>
+<p class="text-xs text-slate-400">Coach, can we adjust my meal plan?</p>
+<p class="text-[10px] text-slate-600 mt-1 uppercase font-bold">5h ago</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Attendance Chart Concept -->
+<div class="glass-dark rounded-2xl p-6 overflow-hidden">
+<h3 class="font-bold text-lg mb-6">Attendance Records</h3>
+<div class="flex items-end justify-between h-32 gap-2 mb-4">
+<div class="w-full bg-white/10 rounded-t-sm h-[40%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[65%]"></div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[90%] border-t-2 border-primary"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[75%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[50%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[85%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[60%]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+<div class="mt-6 p-4 rounded-xl bg-primary/10 border border-primary/20">
+<div class="flex items-center justify-between mb-2">
+<p class="text-xs font-bold">Weekly Rate</p>
+<p class="text-sm font-black text-primary">92%</p>
+</div>
+<p class="text-[10px] text-slate-400">Outstanding consistency from your group this week!</p>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center gap-2 p-4 glass rounded-2xl hover:bg-primary/20 transition-all text-primary">
+<span class="material-symbols-outlined">description</span>
+<span class="text-xs font-bold">Reports</span>
+</button>
+<button class="flex flex-col items-center gap-2 p-4 glass rounded-2xl hover:bg-primary/20 transition-all text-primary">
+<span class="material-symbols-outlined">group_add</span>
+<span class="text-xs font-bold">New Client</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

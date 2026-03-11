@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoluGrow Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 102, 0, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 102, 0, 0.1);
+        }
+        .orange-glow {
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-primary/20 flex flex-col bg-background-light dark:bg-background-dark shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-1.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl">monitoring</span>
+</div>
+<div>
+<h1 class="font-bold text-lg leading-none">SoluGrow</h1>
+<p class="text-xs text-slate-500 dark:text-primary/60 font-medium">Admin Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Members</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined">fitness_center</span>
+<span>Trainers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span>Reports</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-primary/20">
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-4 rounded-lg transition-all orange-glow">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>New Member</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto flex flex-col">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-primary/20 flex items-center justify-between px-8 bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-bold tracking-tight">Dashboard Overview</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative w-64 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-primary/40 group-focus-within:text-primary">search</span>
+<input class="w-full bg-slate-100 dark:bg-primary/5 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/50 text-slate-900 dark:text-slate-100" placeholder="Search data..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg bg-slate-100 dark:bg-primary/5 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-lg bg-slate-100 dark:bg-primary/5 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 border border-primary/30 overflow-hidden">
+<img alt="Admin avatar" class="w-full h-full object-cover" data-alt="Professional male portrait for admin profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxZ64rigbh8-mS8GzKmFs3pxVTbrxiMKmZwFxrtAssler8YxG3hpsCA_VBsdODd35ldVi4gou31snoWQdHTNe2wmsM7vPt79bfkUGZUXM4LutaGMhqDumYtyRKGFt3g2GkB89Vg8ks7T91FOBXzg6pz66nv2lDCLHut8AL-60Sl35aM-ndTvcEvRUXhgzn6-IHsgCKNgIIqsfa3jTE7ZKFHfmA1trnZYGYOG8Y8q3N9BsH0cHXjDiylS3af92TTzmjfjR7Dc6oiNU"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Body -->
+<div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-6 rounded-xl orange-glow flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500 dark:text-primary/70">Total Members</p>
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<h3 class="text-2xl font-bold">1,284</h3>
+<p class="text-emerald-500 text-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                            +12% <span class="text-slate-400 dark:text-primary/40 font-normal ml-1">vs last month</span>
+</p>
+</div>
+<div class="glass-card p-6 rounded-xl orange-glow flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500 dark:text-primary/70">Monthly Revenue</p>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<h3 class="text-2xl font-bold">$45,200</h3>
+<p class="text-emerald-500 text-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                            +8.4% <span class="text-slate-400 dark:text-primary/40 font-normal ml-1">vs last month</span>
+</p>
+</div>
+<div class="glass-card p-6 rounded-xl orange-glow flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500 dark:text-primary/70">Attendance Rate</p>
+<span class="material-symbols-outlined text-primary">event_available</span>
+</div>
+<h3 class="text-2xl font-bold">92%</h3>
+<p class="text-rose-500 text-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+                            -1.2% <span class="text-slate-400 dark:text-primary/40 font-normal ml-1">vs last week</span>
+</p>
+</div>
+<div class="glass-card p-6 rounded-xl orange-glow flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500 dark:text-primary/70">Active Trainers</p>
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+</div>
+<h3 class="text-2xl font-bold">24</h3>
+<p class="text-emerald-500 text-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                            +2 <span class="text-slate-400 dark:text-primary/40 font-normal ml-1">new hires</span>
+</p>
+</div>
+</div>
+<!-- Charts Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Bar Chart: Revenue -->
+<div class="glass-card p-6 rounded-xl">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h4 class="font-bold text-lg">Revenue Trends</h4>
+<p class="text-sm text-slate-500 dark:text-primary/60">Last 6 months performance</p>
+</div>
+<div class="flex gap-2">
+<span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-bold tracking-wider">MONTHLY</span>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2">
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary/10 dark:bg-primary/5 rounded-t-lg group-hover:bg-primary/30 transition-all h-[40%] relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+<span class="text-xs font-medium text-slate-400">Jan</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary/10 dark:bg-primary/5 rounded-t-lg group-hover:bg-primary/30 transition-all h-[65%] relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+<span class="text-xs font-medium text-slate-400">Feb</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary/10 dark:bg-primary/5 rounded-t-lg group-hover:bg-primary/30 transition-all h-[55%] relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+<span class="text-xs font-medium text-slate-400">Mar</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary/10 dark:bg-primary/5 rounded-t-lg group-hover:bg-primary/30 transition-all h-[80%] relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+<span class="text-xs font-medium text-slate-400">Apr</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary/10 dark:bg-primary/5 rounded-t-lg group-hover:bg-primary/30 transition-all h-[70%] relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+<span class="text-xs font-medium text-slate-400">May</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary rounded-t-lg h-[95%] relative overflow-hidden orange-glow">
+<div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"></div>
+</div>
+<span class="text-xs font-bold text-primary">Jun</span>
+</div>
+</div>
+</div>
+<!-- Line Chart: Attendance -->
+<div class="glass-card p-6 rounded-xl">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h4 class="font-bold text-lg">Daily Attendance</h4>
+<p class="text-sm text-slate-500 dark:text-primary/60">Weekly traffic patterns</p>
+</div>
+<div class="flex gap-2">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-primary/5 text-slate-500 dark:text-primary/60 text-xs font-bold tracking-wider">WEEKLY</span>
+</div>
+</div>
+<div class="h-64 relative">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 150">
+<defs>
+<lineargradient id="line-gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ff6600" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#ff6600" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,120 Q50,60 100,100 T200,80 T300,40 T400,60 V150 H0 Z" fill="url(#line-gradient)"></path>
+<path d="M0,120 Q50,60 100,100 T200,80 T300,40 T400,60" fill="none" stroke="#ff6600" stroke-width="3"></path>
+</svg>
+<div class="flex justify-between mt-4 px-2">
+<span class="text-xs font-medium text-slate-400">Mon</span>
+<span class="text-xs font-medium text-slate-400">Tue</span>
+<span class="text-xs font-medium text-slate-400">Wed</span>
+<span class="text-xs font-medium text-slate-400">Thu</span>
+<span class="text-xs font-medium text-slate-400">Fri</span>
+<span class="text-xs font-medium text-slate-400">Sat</span>
+<span class="text-xs font-medium text-slate-400">Sun</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Table and Activity List -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12">
+<!-- Recent Payments Table -->
+<div class="lg:col-span-2 glass-card rounded-xl overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-primary/20 flex items-center justify-between">
+<h4 class="font-bold text-lg">Recent Payments</h4>
+<button class="text-primary text-sm font-semibold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-primary/5 text-slate-500 dark:text-primary/50 text-xs uppercase tracking-wider">
+<th class="px-6 py-4 font-bold">Member</th>
+<th class="px-6 py-4 font-bold">Plan</th>
+<th class="px-6 py-4 font-bold">Amount</th>
+<th class="px-6 py-4 font-bold">Status</th>
+<th class="px-6 py-4 font-bold text-right">Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-primary/10">
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden shrink-0">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Female user portrait with smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0T7pbz20y-T6NpEelWHjiG3VsFKGThhC4in_AFwGzxRtCkCs3kvU2DS9GAv1Zd5-6AgUDttNxa4CG4sqIFg4w561YUNezK6fau0yhfyzRVlbVlVPUASqMUSll-ByEhJY_YS9Q3w28-uF_1CAlvFTf1GfsxyxR1d0yOqSuELTYjk1axycK2JsYodH5c1KQT9ObPdt547kyGg3OYmqn3dezFVyJNZIDgtG7agOgQb9XidhZNK95HfcR27ACo5gDTLb4-9-or-zG7js"/>
+</div>
+<span class="font-medium">Sarah Jenkins</span>
+</td>
+<td class="px-6 py-4 text-sm">Platinum</td>
+<td class="px-6 py-4 font-semibold text-primary">$120.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-tight">Paid</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 text-right">Oct 24, 2023</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden shrink-0">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Male user portrait with neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgD3pUVmSDwTnew0bmoKnx01yzLutTbFzWhKUOJbs0eLcqzImithsxgP3U0hCOVmPHt94CWVvxhos8edubwOptv69smgWpH3irxO8yQV63RRRJyn6gyXwojI7ScdOTZvwWw5QEWU0Cirtaupvp0NxRaStEl90UhPULzP3C4qdFMzeXOYlVF2NKQ1GlTPw5euI2rs4eLd4Is02wVcBFCz2byYkEqlfLvh4_GBmrvC7CmoV5K0HLUH1ZeJ1WT56HoGDWpEX5YAiKnsg"/>
+</div>
+<span class="font-medium">Michael Ross</span>
+</td>
+<td class="px-6 py-4 text-sm">Standard</td>
+<td class="px-6 py-4 font-semibold text-primary">$85.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-amber-100 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 text-[10px] font-bold uppercase tracking-tight">Pending</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 text-right">Oct 23, 2023</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden shrink-0">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Woman executive looking directly at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUDK-VUo1-Q7AhNDluNUBOt18ca6rhX-4xhFaKF9K09Rzt3ngSKntAJGiYUo9GnmHTjgAwMnD4r1bfq7kiSXf6JV7cAblLeWZgLZsYnj7r4GAuiSPYMzlIBF39EqemZDYyHdbvDlR--y4w2Bwds1u7gXFIMun-rODgcCeI9xOTZZ5yVkyNHh4vgUBa4F9ff4YRF7mLA4EaDOMF0KfF2pQIfo8gW_vmUeGJKbCYF3sDK9i0s-EBxWwIU2fnktyOq1Qr4ZP4v0ruj8"/>
+</div>
+<span class="font-medium">Linda Carter</span>
+</td>
+<td class="px-6 py-4 text-sm">Platinum</td>
+<td class="px-6 py-4 font-semibold text-primary">$120.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-tight">Paid</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 text-right">Oct 23, 2023</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden shrink-0">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Confident man smiling slightly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdqLQQ2VtYW7P1xUTswhq6BfwcQpkrLlFTQiRtMKYhbx07Sqya3QI8OumQKMVokhaMxadBL3ARL4CldzLyA91B9o09yjoEW4iTmzCCvt3GcrJjnCH3RmSyOXOJP_UbjjmJGJmmJaASac3LlzPHVvIMhvrjzkF0XqBOhx5G7070JPbao1nYeUntssFrJJcpcBnNUhaOEF0KfFwT0ubPefbn7mCLqK9v0Ip6pIYPKttxShVbK-EYSxHA9_4iElbg8d2EM8U2TMkyHP8"/>
+</div>
+<span class="font-medium">James Wilson</span>
+</td>
+<td class="px-6 py-4 text-sm">Trial</td>
+<td class="px-6 py-4 font-semibold text-primary">$0.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-slate-200 dark:bg-slate-500/10 text-slate-600 dark:text-slate-400 text-[10px] font-bold uppercase tracking-tight">Free</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 text-right">Oct 22, 2023</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Recent Member Activity -->
+<div class="glass-card rounded-xl p-6 overflow-hidden">
+<h4 class="font-bold text-lg mb-6">Recent Activity</h4>
+<div class="space-y-6">
+<div class="flex gap-4 relative">
+<div class="absolute left-2.5 top-8 bottom-0 w-0.5 bg-slate-200 dark:bg-primary/10"></div>
+<div class="h-5 w-5 rounded-full bg-primary flex items-center justify-center relative z-10 orange-glow">
+<span class="material-symbols-outlined text-[12px] text-white">login</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium"><span class="text-primary">Marcus V.</span> checked in</p>
+<p class="text-xs text-slate-500 mt-1">Today at 10:45 AM</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="absolute left-2.5 top-8 bottom-0 w-0.5 bg-slate-200 dark:bg-primary/10"></div>
+<div class="h-5 w-5 rounded-full bg-emerald-500 flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-[12px] text-white">person_add</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium">New member registered</p>
+<p class="text-xs text-slate-500 mt-1">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="absolute left-2.5 top-8 bottom-0 w-0.5 bg-slate-200 dark:bg-primary/10"></div>
+<div class="h-5 w-5 rounded-full bg-amber-500 flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-[12px] text-white">fitness_center</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium"><span class="text-primary">Sarah J.</span> booked a trainer</p>
+<p class="text-xs text-slate-500 mt-1">4 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="h-5 w-5 rounded-full bg-slate-400 flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-[12px] text-white">payments</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium">Subscription renewal failed</p>
+<p class="text-xs text-slate-500 mt-1">Yesterday at 5:30 PM</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-2 border border-slate-200 dark:border-primary/20 text-slate-600 dark:text-primary/70 text-sm font-bold rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-all">
+                            Load More Activity
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

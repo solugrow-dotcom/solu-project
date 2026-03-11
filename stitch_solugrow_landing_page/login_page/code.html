@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoluGrow | Gym Management Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(35, 23, 15, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 102, 0, 0.2);
+        }
+        .orange-glow {
+            box-shadow: 0 0 40px -10px rgba(255, 102, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center p-4 overflow-x-hidden">
+<!-- Background Image with Overlay -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-background-dark via-background-dark/95 to-primary/20"></div>
+<div class="absolute inset-0 bg-center bg-cover opacity-30 mix-blend-overlay" data-alt="Blurred dark cinematic gym interior with orange lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA39pY08h9Vc4sr6yIAh4Y35CLXmyiRzri06ojx5m8EZY2PMc02prEnLsn_mcq48ngmbh90FN73dDXZ5pnQoszhb_JtaGE53jpoFGgoWjn4AHHuG6Ix0vdaM-dzA8Fz3vYWGgcxejJmeYw769ZRfM_mNf62eeatg_VaMeFBKEITbbUomtS-oU2V7UYo_McOHyl-Z1OTosZdHAIIxFGrYMcQ1F7twp6LzThcKE-Ci_-ZOQaYTjvYraGUwQshaJpDZNB0Dn2oAL86Nt4');"></div>
+</div>
+<!-- Main Content -->
+<main class="relative z-10 w-full max-w-md">
+<div class="flex flex-col items-center mb-8">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center orange-glow mb-4">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fitness_center">fitness_center</span>
+</div>
+<h1 class="text-3xl font-black tracking-tight text-white uppercase italic">Solu<span class="text-primary">Grow</span></h1>
+</div>
+<!-- Login Card -->
+<div class="glass-card rounded-xl p-8 shadow-2xl">
+<div class="mb-8">
+<h2 class="text-2xl font-bold text-white mb-2">Welcome Back</h2>
+<p class="text-slate-400">Manage your gym empire with SoluGrow</p>
+</div>
+<form class="space-y-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-300 ml-1">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" data-icon="mail">mail</span>
+<input class="w-full bg-background-dark/50 border border-slate-700 focus:border-primary focus:ring-1 focus:ring-primary rounded-lg py-4 pl-12 pr-4 text-white placeholder:text-slate-600 transition-all outline-none" placeholder="manager@yourgym.com" type="email"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg orange-glow transition-all flex items-center justify-center gap-2" type="submit">
+<span>Send OTP</span>
+<span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8 flex flex-col items-center gap-4">
+<a class="text-primary hover:text-primary/80 text-sm font-semibold flex items-center gap-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="key">key</span>
+                    Login with Password
+                </a>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-2"></div>
+<p class="text-slate-400 text-sm">
+                    Don't have an account? 
+                    <a class="text-white hover:text-primary font-bold transition-colors ml-1 underline decoration-primary/30 underline-offset-4" href="#">Sign Up</a>
+</p>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="mt-8 flex justify-center gap-6 text-xs text-slate-500 font-medium">
+<a class="hover:text-slate-300 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-slate-300 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-slate-300 transition-colors" href="#">Support</a>
+</div>
+</main>
+<!-- Decorative Glows -->
+<div class="fixed top-1/4 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-1/4 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+</body></html>
