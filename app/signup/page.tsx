@@ -44,7 +44,7 @@ export default function Signup() {
 
                 if (gymError) throw gymError;
 
-                alert("Account established! Please check your email for verification.");
+                alert("Account established! You can now log in.");
                 router.push("/login");
             }
         } catch (error: any) {

@@ -49,13 +49,14 @@ export default function Attendance() {
             member_id: memberId,
             gym_id: gymId,
             date: new Date().toISOString().split("T")[0],
-            status: 'present'
+            status: 'present',
+            check_in: new Date().toISOString()
         });
 
         if (error) {
-            alert("Error marking attendance: " + error.message);
+            alert("Error: " + error.message);
         } else {
-            alert("Attendance Marked Successfully");
+            alert("Attendance Logged");
         }
     }
 

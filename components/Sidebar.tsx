@@ -11,6 +11,7 @@ export default function Sidebar() {
         { icon: "dashboard", label: "Dashboard", href: "/dashboard" },
         { icon: "groups", label: "Members", href: "/member" },
         { icon: "calendar_month", label: "Attendance", href: "/attendance" },
+        { icon: "psychology", label: "AI Lab", href: "/ai-lab" },
         { icon: "payments", label: "Payments", href: "/payments" },
         { icon: "recipe", label: "Plans", href: "/plans" },
         { icon: "warning", label: "Alerts", href: "/expiry" },

@@ -22,6 +22,7 @@ export default function LoginPage() {
 
             if (error) throw error;
 
+            // Redirect to dashboard
             router.push("/dashboard");
         } catch (error: any) {
             alert(error.message || "Login Failed");
